@@ -2,13 +2,17 @@
 
   <img src="./distributions/JELOS/logos/jelos-logo.png" width="240">  
 
+## 目次
+右上にある「三」アイコンをクリックすると目次が表示されます。  
+
+<img src="./documentation/plumOS_sc03.png" width="700">  
 
 ## 特徴
 JELOSをベースとした実験的なディストリビューションです。  
 
 ## ダウンロード
 画面右側のメニューの「Releases」から.img.gzファイルをダウンロードできます。  
- <img src="./documentation/plumOS_sc01.png" width="240">　<img src="./documentation/plumOS_sc02.png" width="240">  
+ <img src="./documentation/plumOS_sc01.png" width="400">　<img src="./documentation/plumOS_sc02.png" width="400">  
 
 ## 既知の問題
 - plumOSでは32bit環境を除外したため、PS1をプレイする場合はROM選択画面でセレクトメニュー→「システム詳細設定」→「エミュレーター」項目から「RETROARCH: PCSX REARMED32　以外を選択」してください
