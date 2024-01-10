@@ -9,6 +9,7 @@ Environment=HOME=/storage
 Environment=SDL_AUDIODRIVER=pulseaudio
 ExecStartPre=/usr/bin/es_settings
 ExecStart=/usr/bin/emulationstation --log-path /var/log --no-splash
+ExecStartPost=/usr/bin/pactl set-sink-volume alsa_output._sys_devices_platform_rk817-sound_sound_card0.stereo-fallback 100%
 KillMode=process
 TimeoutStopSec=3
 Restart=always

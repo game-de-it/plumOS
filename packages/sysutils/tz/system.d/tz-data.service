@@ -6,7 +6,7 @@ After=var.mount systemd-tmpfiles-setup.service
 
 [Service]
 Type=oneshot
-Environment=TIMEZONE=UTC
+Environment=TIMEZONE=Asia/Tokyo
 EnvironmentFile=-/storage/.cache/timezone
 ExecStart=/bin/ln -sf /usr/share/zoneinfo/${TIMEZONE} /var/run/localtime
 RemainAfterExit=yes

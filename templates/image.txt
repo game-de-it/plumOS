@@ -1,0 +1,4 @@
+./scripts/clean 
+./scripts/build 
+./scripts/install 
+./scripts/image mkimage

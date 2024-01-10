@@ -1,0 +1,16 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-2.0
+# Copyright (C) 2024 plumOS (https://github.com/game-de-it/plumOS)
+
+SCRIPTS_DIR="/storage/roms/scripts"
+PIPEWIREDIR="/storage/.config/pipewire/pipewire.conf.d"
+EQSINKFILE="sink-eq6.conf"
+
+mkdir -p "${SCRIPTS_DIR}"
+cp /usr/bin/Equalizer.sh "${SCRIPTS_DIR}"/Equalizer.sh
+
+if [ ! -f "${PIPEWIREDIR}"/"${EQSINKFILE}" ]
+then
+  mkdir -p "${PIPEWIREDIR}"
+  cp /usr/config/pipewire/pipewire.conf.d/sink-eq6.conf "${PIPEWIREDIR}"/"${EQSINKFILE}"
+fi

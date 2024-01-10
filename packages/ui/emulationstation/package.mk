@@ -164,5 +164,5 @@ post_install() {
   ln -sf /usr/share/locale ${INSTALL}/usr/lib/locale
 
   ln -sf /usr/share/locale  ${INSTALL}/usr/config/emulationstation/locale
-
+  cp ${PKG_DIR}/config/common/locale/ja_JP/LC_MESSAGES/emulationstation2.* ${INSTALL}/usr/config/locale/ja_JP/LC_MESSAGES/
 }
