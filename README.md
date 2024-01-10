@@ -20,11 +20,6 @@ JELOSをベースとした実験的なディストリビューションです。
 - イコライザーによってスピーカーから出る音の音質を向上させています
 - 32bit版のRetroarchを廃止しています
 
-- 新FunKey-Sスプラッシュ画面
-  - 提供者 [ Twitter : JLさん @JL_0w0] ありがとうございます！
-  <img src="https://github.com/game-de-it/FunKey-OS/blob/game_de_it_funkey-s/FunKey/board/funkey/linux_logo.png" width="240">  
-
-
 ---
 
 ### 〜以下　編集中〜
