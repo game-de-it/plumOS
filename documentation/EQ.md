@@ -8,7 +8,7 @@
 # windowsの手順
 Tera TermはplumOSにネットワークから接続するためのアプリです。  
 
-1. 下記のリンクからDLして解凍します。
+1. 下記のリンクからDLして解凍します。  
 [https://forest.watch.impress.co.jp/library/software/utf8teraterm/download_10869.html](https://forest.watch.impress.co.jp/library/software/utf8teraterm/download_10869.html)  
 
 2. 解凍したフォルダ内の「ttermpro.exe」を実行します。  
