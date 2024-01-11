@@ -1,12 +1,12 @@
 # イコライザーのリアルタイムON/OFF
 
 コマンドラインからイコライザーをON/OFFすることができます。  
-ゲームプレイ中でもリアルタイムでイコライザーのON/OFFが切り替わるため、音の違いを実感していただくことができます。
+ゲームプレイ中でもリアルタイムでイコライザーのON/OFFが切り替わるため、音の違いを実感していただくことができます。  
+
+前提として、plumOSをWifiネットワークに接続しておき、システム設定から「ルートパスワード」の設定を完了させて、ネットワーク設定から「SSH有効」をしてください。  
 
 # windowsの手順
 Tera TermはplumOSにネットワークから接続するためのアプリです。  
-前提として、plumOSをWifiネットワークに接続しておき、システム設定から「ルートパスワード」の設定を完了させて、ネットワーク設定から「SSH有効」をしてください。  
-
 
 1. 下記のリンクからDLして解凍します。
 [https://forest.watch.impress.co.jp/library/software/utf8teraterm/download_10869.html](https://forest.watch.impress.co.jp/library/software/utf8teraterm/download_10869.html)  
