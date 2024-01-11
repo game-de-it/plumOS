@@ -41,7 +41,8 @@ pactl set-default-sink effect_input.eq6
 例えばイコライザーOFF＝音量50％の状態でイコライザーONにすると、最大音量が50％に制限されます。  
 よってONの時に正しい音量を得るためには、イコライザーOFF＝100％音量にしておく必要があります。  
 
-windowsでの手順は以上です。
+windowsでの手順は以上です。  
+
 ---
 
 # MacOSの手順
