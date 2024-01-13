@@ -13,6 +13,9 @@ log() {
 
 performance 2>/dev/null
 
+### jslisten_plumOS
+/usr/bin/jslisten_plumOS
+
 ### Load platform specific quirks
 if [ -d "/usr/lib/autostart/quirks/platforms/${HW_DEVICE}" ]
 then

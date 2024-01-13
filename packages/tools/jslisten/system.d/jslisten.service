@@ -5,7 +5,8 @@ After=graphical.target
 
 [Service]
 Environment=HOME=/storage
-ExecStart=/usr/bin/jslisten --mode hold --device /dev/js0
+#ExecStart=/usr/bin/jslisten --mode hold --device /dev/js0
+ExecStart=/usr/bin/jslisten_plumOS
 Restart=on-failure
 
 [Install]

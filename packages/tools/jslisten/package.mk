@@ -21,6 +21,7 @@ make_target() {
 makeinstall_target() {
   mkdir -p ${INSTALL}/usr/bin
   cp bin/jslisten ${INSTALL}/usr/bin
+  cp ${PKG_DIR}/sources/jslisten_plumOS ${INSTALL}/usr/bin
   mkdir -p ${INSTALL}/usr/config
   cp ${PKG_DIR}/config/* ${INSTALL}/usr/config
 }

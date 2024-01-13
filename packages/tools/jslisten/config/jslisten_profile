@@ -17,7 +17,7 @@ jslisten() {
         JSLISTENCONF="/storage/.config/system/configs/jslisten.cfg"
         if [ "$1" == "set" ]
         then
-                systemctl stop jslisten
+                killall -KILL jslisten
 		rm /storage/.config/system/configs/jslisten.cfg
 
                 if [ "$2" == "mpv" ]
@@ -61,23 +61,27 @@ program="/usr/bin/manage_mpv.sh quit"
 button1=${BTN_QUIT_HOTKEY}
 button2=${BTN_QUIT_SELECT}
 
+[Equalizer]
+program="/storage/roms/scripts/Equalizer.sh"
+button1=8
+button2=15
+
 EOF
 		fi
 
                 cat <<EOF >>${JSLISTENCONF}
-[KillAll]
-program="/usr/bin/killall ${2}"
-button1=${BTN_KILL_HOTKEY}
-button2=${BTN_KILL_SELECTA}
-button3=${BTN_KILL_SELECTB}
+[Equalizer]
+program="/storage/roms/scripts/Equalizer.sh"
+button1=8
+button2=15
 
 EOF
-                systemctl start jslisten
+                /usr/bin/jslisten_plumOS &
         elif [ "$1" == "stop" ]
         then
-                systemctl stop jslisten
+                killall -KILL jslisten
         elif [ "$1" == "start" ]
         then
-                systemctl start jslisten
+                /usr/bin/jslisten_plumOS &
         fi
 }

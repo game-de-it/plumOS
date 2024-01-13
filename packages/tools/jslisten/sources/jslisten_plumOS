@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export HOME=/storage
+/usr/bin/jslisten --mode plain --device /dev/js0 &
