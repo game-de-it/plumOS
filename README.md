@@ -116,7 +116,19 @@ ESの画面からSTARTボタンを押してメニューを出して「システ�
 - 「WIFI 省電力を有効」をONにする
 
 # Tips
-### Emulationstationのthemeに時計を表示させる方法
+### ●Emulationstationのデフォルトthemeに時計を表示させる方法
+1. 下記URLからzipファイルをダウンロードして解凍します
+2. 解凍したフォルダをSDカード内の「themes」フォルダにコピーします  
+  (/storage/.emulationstation/themes)  
+3. emulationstationの「UI設定→テーマ」の順に進み「es-theme-art-book-next-plumOS」を選択してください
+
+
+[https://github.com/game-de-it/plumOS/blob/main/packages/themes/es-theme-art-book-next/sources/es-theme-art-book-next-plumOS.zip](https://github.com/game-de-it/plumOS/blob/main/packages/themes/es-theme-art-book-next/sources/es-theme-art-book-next-plumOS.zip)  
+
+### ●デフォルトthemeをシンプルに表示させる方法
+emulationstationの「UI設定→テーマ設定」の順に進み、下記の画像のように設定してください。  
+<img src="./documentation/plumOS_sc08.jpg" width="400">
+<img src="./documentation/plumOS_sc09.jpg" width="400">
 
 ---
 以上
