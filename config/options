@@ -22,7 +22,7 @@ DISTRO_DIR="${ROOT}/distributions"
 PROJECT_DIR="${ROOT}/projects"
 
 # determines DISTRO, if not forced by user
-DISTRO="${DISTRO:-JELOS}"
+DISTRO="${DISTRO:-plumOS}"
 
 # determines PROJECT, if not forced by user
 PROJECT="${PROJECT:-PC}"
@@ -38,7 +38,7 @@ ENABLE_32BIT="${ENABLE_32BIT-true}"
 DEVICE="${DEVICE:-AMD64}"
 
 # the version is the date
-OS_VERSION=$(date +%Y%m%d)
+OS_VERSION=$(date +%Y_%m_%d_%H-%M)
 
 # defines the born on date of a build
 BUILD_DATE=$(date)

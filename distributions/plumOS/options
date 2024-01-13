@@ -8,25 +8,25 @@
   HARDENING_SUPPORT="no"
 
 # The name of the parent organization for updates
-  GIT_ORGANIZATION="JustEnoughLinuxOS"
+  GIT_ORGANIZATION="plumOS"
 
 # The name of the github project for updates
-  GIT_REPO="distribution"
+  GIT_REPO="plumOS"
 
 # Name of the Distro to build (full name, without special characters)
-  DISTRONAME="JELOS"
+  DISTRONAME="plumOS"
 
 # short project description
   DESCRIPTION="An Open Source firmware."
 
 # Distribution Home URL
-  HOME_URL="https://www.jelos.org"
+  HOME_URL="https://github.com/game-de-it/plumOS"
 
 # Documentation URL
-  WIKI_URL="https://www.jelos.org"
+  WIKI_URL="https://github.com/game-de-it/plumOS"
 
 # Where to report bugs
-  BUG_REPORT_URL="https://www.jelos.org"
+  BUG_REPORT_URL="https://github.com/game-de-it/plumOS"
 
 # Root password to integrate in the target system
   ROOT_PASSWORD="system generated"
@@ -84,7 +84,7 @@
   OPENVPN_SUPPORT="no"
 
 # build and install WireGuard support (yes / no)
-  WIREGUARD_SUPPORT="yes"
+  WIREGUARD_SUPPORT="no"
 
 # build and install diskmounter support (udevil)
 # this service provide auto mounting support for external drives in the
@@ -160,7 +160,7 @@
 
 # Distribution Specific source location
   DISTRO_MIRROR=""
-  DISTRO_SRC="https://github.com/JustEnoughLinuxOS"
+  DISTRO_SRC="https://github.com/game-de-it/plumOS"
 
 # Default size of system partition, in MB, eg. 512
   SYSTEM_SIZE=2048
@@ -175,7 +175,7 @@
   GET_HANDLER_SUPPORT="archive git file"
 
 # Partition labels for USB/SD installation media
-  DISTRO_BOOTLABEL="JELOS"
+  DISTRO_BOOTLABEL="PLUMOS"
   DISTRO_DISKLABEL="STORAGE"
 
 # Settings package name - blank if not required
