@@ -115,5 +115,8 @@ ESの画面からSTARTボタンを押してメニューを出して「システ�
 - 「GPUパフォーマンスプロファイル」を「BATTERY FOCUS」を選択します
 - 「WIFI 省電力を有効」をONにする
 
+# Tips
+### Emulationstationのthemeに時計を表示させる方法
+
 ---
 以上
