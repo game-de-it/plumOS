@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Define ROOTPASS and DEVICEIP environment variables in .bashrc.
+# Enter the device's root password in "export ROOTPASS=".
+# Enter the IP address of the device in "export DEVICEIP=".
+# Enter the full path to plumOS in "export SCPROOT=".
+. ~/.bashrc
+
+apt show sshpass > /dev/null 2&>1
+if [ $? != 0 ];
+then
+  sudo apt install -y sshpass
+fi
+echo "Transferring files : `ls -trn ${SCPROOT}/release/*.tar | tail -n 1|awk  '{ print $NF }'`"
+echo "Please wait a few minutes for the prompt to return."
+sshpass -p ${ROOTPASS} scp -v -oStrictHostKeyChecking=no `ls -trn ${SCPROOT}/release/*.tar | tail -n 1|awk  '{ print $NF }'` "root@${DEVICEIP}:.update/"
