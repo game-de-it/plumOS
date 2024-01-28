@@ -5,7 +5,7 @@
 PKG_NAME="ffmpeg"
 PKG_LICENSE="LGPLv2.1+"
 PKG_SITE="https://ffmpeg.org"
-PKG_DEPENDS_TARGET="toolchain zlib bzip2 openssl speex"
+PKG_DEPENDS_TARGET="toolchain zlib bzip2 openssl speex x264 flac"
 PKG_LONGDESC="FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video."
 
 PKG_VERSION="6.0"
@@ -194,7 +194,7 @@ configure_target() {
               ${PKG_FFMPEG_RPI} \
               --enable-runtime-cpudetect \
               --disable-hardcoded-tables \
-              --disable-encoders \
+              --enable-encoder=gif \
               --enable-encoder=ac3 \
               --enable-encoder=aac \
               --enable-encoder=wmav2 \
@@ -234,7 +234,6 @@ configure_target() {
               --disable-libvo-amrwbenc \
               --disable-libvorbis \
               --disable-libvpx \
-              --disable-libx264 \
               --disable-libxavs \
               --disable-libxvid \
               --enable-zlib \
@@ -242,6 +241,8 @@ configure_target() {
               --disable-altivec \
               ${PKG_FFMPEG_FPU} \
               --disable-symver \
+              --enable-libx264 \
+              --enable-gpl \
               ${PKG_FFMPEG_TESTING}
 }
 
