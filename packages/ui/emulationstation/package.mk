@@ -78,7 +78,8 @@ post_unpack() {
 fi
 
 pre_configure_target() {
-rsync -a ${PKG_DIR}/sources/emulationstation_plumOS/ ${PKG_BUILD}/
+# rsync for debugging ES
+# rsync -a ~/emulationstation_plumOS/ ${PKG_BUILD}/
 
   for key in SCREENSCRAPER_DEV_LOGIN \
         GAMESDB_APIKEY \
