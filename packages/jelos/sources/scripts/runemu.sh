@@ -147,6 +147,28 @@ case ${EMULATOR} in
     jslisten set "-9 mednafen"
     RUNTHIS='${RUN_SHELL} /usr/bin/start_mednafen.sh "${ROMNAME}" "${CORE}" "${PLATFORM}"'
   ;;
+  picoarch)
+    case ${CORE} in
+      picoarch-beetle-pce-fast)
+        /usr/bin/picoarch-beetle-pce-fast.sh "${ROMNAME}"
+        ;;
+      picoarch-gambatte)
+        /usr/bin/picoarch-gambatte.sh "${ROMNAME}"
+        ;;
+      picoarch-gpsp)
+        /usr/bin/picoarch-gpspe.sh "${ROMNAME}"
+        ;;
+      picoarch-picodrive)
+        /usr/bin/picoarch-picodrive.sh "${ROMNAME}"
+        ;;
+      picoarch-quicknes)
+        /usr/bin/picoarch-quicknes.sh "${ROMNAME}"
+        ;;
+      picoarch-snes9x)
+        /usr/bin/picoarch-snes9x.sh "${ROMNAME}"
+        ;;
+    esac
+  ;;
   retroarch)
     # Make sure NETWORK_PLAY isn't defined before we start our tests/configuration.
     del_setting netplay.mode
