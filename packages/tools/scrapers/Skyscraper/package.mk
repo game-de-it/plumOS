@@ -8,7 +8,8 @@ PKG_ARCH="any"
 PKG_LICENSE="MIT"
 PKG_SITE="https://github.com/muldjord/skyscraper"
 PKG_URL="${PKG_SITE}.git"
-PKG_DEPENDS_TARGET="toolchain qt-everywhere p7zip:host"
+#PKG_DEPENDS_TARGET="toolchain qt-everywhere p7zip:host"
+PKG_DEPENDS_TARGET="toolchain qt5 p7zip:host"
 PKG_PRIORITY="optional"
 PKG_SECTION="emuelec"
 PKG_SHORTDESC="Powerful and versatile game scraper written in c++ "
@@ -27,8 +28,9 @@ configure_target() {
   sed -e "s#resexamples.path=/usr/local/etc/skyscraper/resources#resexamples.path=${INSTALL}/usr/share/skyscraper/resources#" -i ${PKG_BUILD}/skyscraper.pro
 
   rm -rf .qmake.stash
-  QMAKEPATH=$(find $BUILD/qt-everywhere*/qtbase/bin -maxdepth 1 -name qmake)
-  $QMAKEPATH ${PKG_BUILD}/skyscraper.pro
+
+  QMAKEPATH="${TOOLCHAIN}/bin/qmake"
+  ${QMAKEPATH} ${PKG_BUILD}/skyscraper.pro
 }
 
 post_makeinstall_target() {
