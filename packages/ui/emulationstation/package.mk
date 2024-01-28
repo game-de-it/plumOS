@@ -3,12 +3,12 @@
 # Copyright (C) 2023 JELOS (https://github.com/JustEnoughLinuxOS)
 
 PKG_NAME="emulationstation"
-PKG_VERSION="99b7b72818f3fd702b0d11d3e530810568405a3a"
+PKG_VERSION="a19e876ca8dcb49a169766e0684d809b4d64284d"
 PKG_GIT_CLONE_BRANCH="main"
-PKG_REV="1"
+PKG_REV="2"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/JustEnoughLinuxOS/emulationstation"
+PKG_SITE="https://github.com/game-de-it/emulationstation_plumOS"
 PKG_URL="${PKG_SITE}.git"
 PKG_DEPENDS_TARGET="boost toolchain SDL2 freetype curl freeimage bash rapidjson SDL2_mixer fping p7zip alsa vlc drm_tool pugixml"
 PKG_NEED_UNPACK="busybox"
@@ -78,6 +78,8 @@ post_unpack() {
 fi
 
 pre_configure_target() {
+rsync -a ${PKG_DIR}/sources/emulationstation_plumOS/ ${PKG_BUILD}/
+
   for key in SCREENSCRAPER_DEV_LOGIN \
         GAMESDB_APIKEY \
         CHEEVOS_DEV_LOGIN
@@ -164,5 +166,4 @@ post_install() {
   ln -sf /usr/share/locale ${INSTALL}/usr/lib/locale
 
   ln -sf /usr/share/locale  ${INSTALL}/usr/config/emulationstation/locale
-  cp ${PKG_DIR}/config/common/locale/ja_JP/LC_MESSAGES/emulationstation2.* ${INSTALL}/usr/config/locale/ja_JP/LC_MESSAGES/
 }
