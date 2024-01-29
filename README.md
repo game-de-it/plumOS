@@ -15,8 +15,13 @@ JELOSをベースとした実験的なディストリビューションです。
  <img src="./documentation/plumOS_sc01.png" width="400">　<img src="./documentation/plumOS_sc02.png" width="400">  
 
 ## 既知の問題
-- 調査中
-
+- picoarchの問題
+  - 早送りができるコア・できないコアがある
+  - メニュー画面のキー操作が早い(キーリピートの問題？)
+  - 画面の色が変なコアがある
+  - アスペクト比がおかしい
+- Retroarchの録画機能の問題
+  - 録画機能にバグがあり一般的な手順では正常に録画できない
 ## 謝辞
 - オリジナルのJELOS開発チームに感謝と敬意を表します。
 - plumOSロゴ＆スプラッシュ画像の提供者 [ Xアカウント : JLさん @JL_0w0] ありがとうございます！
@@ -24,26 +29,30 @@ JELOSをベースとした実験的なディストリビューションです。
   - ブログURL [https://ameblo.jp/unknown-gra/](https://ameblo.jp/unknown-gra/)
 
 ## 更新情報
-- [NEW] β版 Ver 0.2をリリース！  
+- [NEW] β版 Ver 0.3をリリース！  
  
 ## 特徴
 ### ●基本情報
 - デフォルトでEmulationstation、Retroarch、ppsspp-sa(スタンドアローン版)が日本語に設定されています
 - Retroarchの設定およびHotkeyを自由に変更可能です
-- Retroarchからシェルスクリプトを実行可能です
+- SDカード内の「/storage/roms/scripts」フォルダに置かれたシェルスクリプトを実行可能です
   - kuran_kuranさん [ Xアカウント : @kuran_kuran ] の「けものローグ」をプレイできます  
 [https://github.com/kuran-kuran/KemonoRogue](https://github.com/kuran-kuran/KemonoRogue)
 - イコライザーによってスピーカーから出る音の音質を向上させています
-- オフラインアップデートに対応
+- オフラインアップデートに対応(Ver0.2から対応)
   - /storage/.updateにVer0.3以降のアプデファイルを置いて、本体再起動することでアップデートが可能です
 
 ### ●対応エミュレータ
 JELOSのwikiから左側メニューの「System」セクションから、各エミュレータの情報(対応拡張子など)を確認できます。  
 - JELOS wiki [https://jelos.org/](https://jelos.org/)
 
+### picoarchの仕様
+- セレクトボタンでメニューが開きます(ゲームプレイに支障が出るため将来このボタンを変更予定)
+- picoarchに関連するファイルは「/storage/.config/.picoarch/」に保存されます
+
 ### ●Retroarch仕様
-- セーブファイルはromファイルと同じフォルダに作成されます
-- ステートセーブファイルはromファイルと同じフォルダに作成されます
+- セーブファイルはromファイルと同じフォルダに作成されます(変更可能)
+- ステートセーブファイルはromファイルと同じフォルダに作成されます(変更可能)
 - いくつかのメニューが隠されているので「設定→ユーザーインターフェイス」から表示させることができます
 
 ### ●romsフォルダーの自動作成
@@ -73,10 +82,12 @@ ESの画面からSTARTボタンを押してメニューを出して「システ�
 | SELECT+十字キーの←       |        EQのON/OFF |
 
 ### ●Retroarchからシェルスクリプトを実行する手順
-1. SDカード内の[roms/scripts/]フォルダにシェルスクリプトを置きます
-(ファイルの拡張子は .sh にしてください)
-2. ESのTools項目から「Start Retroarh (64-bit)」を起動します
-3. 「コンテンツをロード」→「お気に入り」→「scripts」の順に進み、シェルスクリプトを選択してください
+- SDカード内の[roms/scripts/]フォルダにシェルスクリプトを置きます
+(ファイルの拡張子は .sh にして実行権限を与えてください)
+
+- 下記の手順でもシェルスクリプトを実行可能です
+1. 「TOOLS」→「Start Retroarh (64-bit)」を実行します
+2. 「コンテンツをロード」→「お気に入り」→「scripts」の順に進み、シェルスクリプトを選択してください
 
 ### ●イコライザーについて
 「SELECT+十字キーの←」でEQのON/OFFができます。  
