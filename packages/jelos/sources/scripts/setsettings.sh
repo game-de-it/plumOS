@@ -145,8 +145,8 @@ declare -a NO_ANALOG=(  dreamcast
                         wonderswancolor
 )
 
-declare -a IS_32BIT=(   gpsp
-                        pcsx_rearmed
+declare -a IS_32BIT=(   
+                       
 )
 
 declare -a CORE_RATIOS=(    4/3
