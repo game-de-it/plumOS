@@ -8,12 +8,12 @@ index c52b50b..5e7f2ec 100644
  
 +# @DEVICE@
 +else ifeq ($(platform), @DEVICE@)
-+     CPUFLAGS := -marm -march=armv8-a+crc+simd -mtune=@TARGET_CPU@ -mfpu=neon-fp-armv8 -mfloat-abi=hard -flto
-+     CFLAGS  := $(CPUFLAGS) -fpic -ffast-math -fno-rtti -fno-exceptions
++     CPUFLAGS :=  -march=armv8-a -mtune=@TARGET_CPU@ -mabi=lp64 -Wno-psabi
++     CFLAGS  := $(CPUFLAGS) -fomit-frame-pointer -ffast-math
 +     TARGET := $(TARGET_NAME)_libretro.so
 +     fpic := -fPIC
 +     SHARED := -shared -Wl,--version-script=link.T -Wl,--no-undefined
-+     CPU_ARCH := arm
++     CPU_ARCH := arm64
 +     MMAP_JIT_CACHE = 1
 +     HAVE_DYNAREC = 1
 +

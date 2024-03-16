@@ -31,7 +31,7 @@ PKG_LONGDESC="gameplaySP is a Gameboy Advance emulator for Playstation Portable"
 PKG_PATCH_DIRS+="${DEVICE}"
 PKG_TOOLCHAIN="make"
 
-if [ "${ARCH}" = "arm" ]
+if [ "${ARCH}" = "aarch64" ]
 then
   make_target() {
       make CC=${CC} platform=${DEVICE}
@@ -46,7 +46,7 @@ makeinstall_target() {
   mkdir -p ${INSTALL}/usr/lib/libretro
   if [ "${ARCH}" = "aarch64" ]
   then
-    cp -vP ${ROOT}/build.${DISTRO}-${DEVICE}.arm/gpsp-*/.install_pkg/usr/lib/libretro/gpsp_libretro.so ${INSTALL}/usr/lib/libretro/
+    cp -vP ${ROOT}/build.${DISTRO}-${DEVICE}.aarch64/gpsp-*/gpsp_libretro.so ${INSTALL}/usr/lib/libretro/
   else
     cp ${PKG_BUILD}/gpsp_libretro.so ${INSTALL}/usr/lib/libretro/
   fi
