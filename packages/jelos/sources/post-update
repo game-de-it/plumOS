@@ -71,6 +71,10 @@ ln -sf /usr/share/locale /storage/.config/emulationstation/locale >>/var/log/con
 cp /usr/bin/Equalizer.sh /storage/roms/scripts/
 cp /usr/config/jslisten_profile /storage/.config/jslisten_profile
 
+### picoarch sync
+rsync -av /usr/config/picoarch/data/ /storage/.config/.picoarch/data/
+rsync -av /usr/config/picoarch/bin/ /storage/.config/.picoarch/bin/
+rsync -av /usr/config/picoarch/cores/ /storage/.config/.picoarch/cores/
 
 ### Add items below this line that are safe to remove after a period of time.
 ################################################################################

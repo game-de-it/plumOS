@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2019-present Shanti Gilbert (https://github.com/shantigilbert)
 # Copyright (C) 2023 JELOS (https://github.com/JustEnoughLinuxOS)
+systemctl restart pipewire
 
 # Source predefined functions and variables
 . /etc/profile
@@ -147,27 +148,11 @@ case ${EMULATOR} in
     jslisten set "-9 mednafen"
     RUNTHIS='${RUN_SHELL} /usr/bin/start_mednafen.sh "${ROMNAME}" "${CORE}" "${PLATFORM}"'
   ;;
-  picoarch)
-    case ${CORE} in
-      picoarch-beetle-pce-fast)
-        /usr/bin/picoarch-beetle-pce-fast.sh "${ROMNAME}"
-        ;;
-      picoarch-gambatte)
-        /usr/bin/picoarch-gambatte.sh "${ROMNAME}"
-        ;;
-      picoarch-gpsp)
-        /usr/bin/picoarch-gpspe.sh "${ROMNAME}"
-        ;;
-      picoarch-picodrive)
-        /usr/bin/picoarch-picodrive.sh "${ROMNAME}"
-        ;;
-      picoarch-quicknes)
-        /usr/bin/picoarch-quicknes.sh "${ROMNAME}"
-        ;;
-      picoarch-snes9x)
-        /usr/bin/picoarch-snes9x.sh "${ROMNAME}"
-        ;;
-    esac
+  picoarch_LD)
+    /storage/.config/.picoarch/bin/picoarch_plumOS.sh "${ROMNAME}" "${CORE}" ${EMULATOR}
+  ;;
+  picoarch_HD)
+    /storage/.config/.picoarch/bin/picoarch_plumOS.sh "${ROMNAME}" "${CORE}" ${EMULATOR}
   ;;
   retroarch)
     # Make sure NETWORK_PLAY isn't defined before we start our tests/configuration.
@@ -203,7 +188,6 @@ case ${EMULATOR} in
     case ${HW_ARCH} in
       aarch64)
         if [[ "${CORE}" =~ pcsx_rearmed32 ]] || \
-           [[ "${CORE}" =~ gpsp ]] || \
            [[ "${CORE}" =~ flycast32 ]] || \
            [[ "${CORE}" =~ desmume ]]
         then
