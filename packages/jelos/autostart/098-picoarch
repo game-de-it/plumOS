@@ -4,6 +4,6 @@ PICOROOT="/storage/.config/.picoarch"
 if [ ! -d "${PICOROOT}" ];
 then
   mkdir -p "${PICOROOT}"
-  cp -r /usr/config/picoarch/data "${PICOROOT}"/
+  rsync -av /usr/config/picoarch/ "${PICOROOT}"/
 fi
 
