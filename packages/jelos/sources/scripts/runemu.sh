@@ -154,6 +154,9 @@ case ${EMULATOR} in
   picoarch_HD)
     /storage/.config/.picoarch/bin/picoarch_plumOS.sh "${ROMNAME}" "${CORE}" ${EMULATOR}
   ;;
+  pyxel)
+    /storage/.config/.pyxel/bin/pyxel_plumOS.sh "${ROMNAME}" "${CORE}" ${EMULATOR}
+  ;;
   retroarch)
     # Make sure NETWORK_PLAY isn't defined before we start our tests/configuration.
     del_setting netplay.mode

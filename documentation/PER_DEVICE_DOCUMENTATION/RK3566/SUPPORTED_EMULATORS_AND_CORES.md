@@ -10,6 +10,7 @@ This document describes all available systems emulators and cores available for 
 |&#xf013; System|Moonlight Game Streaming (moonlight)|System|`moonlight`|.sh||
 |&#xf013; System|Music Player (music)|System|`playlists`|.m3u .sh|**gmu:** gmu (default)<br>|
 |&#xf013; System|Ports (ports)|System|`ports`|.sh||
+|&#xf013; System|Pyxel (pyxel)|System|`pyxel`|.py .pyxapp .edit|**pyxel:** pyxel (default)<br>|
 |&#xf013; System|Screenshots (imageviewer)|System|`screenshots`|.jpg .jpeg .png .bmp .psd .tga .gif .hdr .pic .ppm .pgm .mkv .pdf .mp4 .avi||
 |&#xf013; System|SHELL SCRIPTS (scripts)|System|`scripts`|.sh||
 |&#xf013; System|Tools (tools)|System|`modules`|.sh||

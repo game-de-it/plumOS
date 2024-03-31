@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mkdir -p /storage/roms/pyxel
+PYXELROOT="/storage/.config/.pyxel"
+if [ ! -d "${PYXELROOT}" ];
+then
+  mkdir -p "${PYXELROOT}"
+  rsync -av /usr/config/pyxel/ "${PYXELROOT}"/
+fi

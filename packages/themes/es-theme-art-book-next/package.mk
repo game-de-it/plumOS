@@ -16,6 +16,9 @@ PKG_TOOLCHAIN="manual"
 
 makeinstall_target() {
   mkdir -p ${INSTALL}/usr/share/themes/${PKG_NAME}
+  mkdir -p ${INSTALL}/usr/config/locale/ja_JP/LC_MESSAGES/
   cp -rf * ${INSTALL}/usr/share/themes/${PKG_NAME}
   cp ${PKG_DIR}/sources/shellscripts.png ${INSTALL}/usr/share/themes/${PKG_NAME}/_inc/systems/
+  cp ${PKG_DIR}/sources/pyxel.png ${INSTALL}/usr/share/themes/${PKG_NAME}/_inc/systems/
+  cp ${PKG_DIR}/sources/emulationstation2.*  ${INSTALL}/usr/config/locale/ja_JP/LC_MESSAGES/
 }
