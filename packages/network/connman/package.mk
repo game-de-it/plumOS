@@ -4,10 +4,10 @@
 # Copyright (C) 2023 JELOS (https://github.com/JustEnoughLinuxOS)
 
 PKG_NAME="connman"
-PKG_VERSION="7d531a0d2b44b273ee78453b086454a8181a47a8" # 1.42
+PKG_VERSION="1.42" # 1.42
 PKG_LICENSE="GPL"
-PKG_SITE="http://www.connman.net"
-PKG_URL="https://git.kernel.org/pub/scm/network/connman/connman.git/snapshot/connman-${PKG_VERSION}.tar.gz"
+PKG_SITE="https://cdn.kernel.org/pub/linux/network/connman"
+PKG_URL="https://cdn.kernel.org/pub/linux/network/connman/connman-${PKG_VERSION}.tar.xz"
 PKG_DEPENDS_TARGET="toolchain glib ncurses readline dbus iptables wpa_supplicant"
 PKG_LONGDESC="A modular network connection manager."
 PKG_TOOLCHAIN="autotools"
