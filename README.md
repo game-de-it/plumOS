@@ -28,24 +28,16 @@ JELOSをベースとした実験的なディストリビューションです。
   - ブログURL [https://ameblo.jp/unknown-gra/](https://ameblo.jp/unknown-gra/)
 
 ## 更新情報
-- [NEW] β版 Ver 0.4をリリース！  
-- [FIX]citraパッケージの削除
-- [FIX]yuzuパッケージの削除
-- [NEW]dosboxがzipファイルに対応
-- [NEW]Retroarchのバージョンを1.17にアップデート
-- [NEW]gpspコアを64bit化
-- [FIX]一部の32bitコアを削除
-- picoarchの更新内容
-  - [FIX]メニュー画面のキー操作の問題を修正
-  - [FIX]画面の色が変なコアがあったのを修正
-  - [FIX]アスペクト比を修正
-  - [NEW]fast forwardを3倍速に修正
-    - farst forwardが利用できないコアがあります
-  - [NEW]ホットキーを追加(後述のデフォルトのホットキー一覧を参照)
-  - [NEW]ハイデフィニション(HD)とローデフィニション(LD)を追加(後述のpicoarch HDとLDの利用方法を参照)
-    - HDの解像度は640x480
-    - LDの解像度は320x240
-      - Retroarchに比べて50％程度のCPU負荷が軽減されるため電池消費が緩やかになります
+- [NEW] β版 Ver 0.5をリリース！  
+- [レトロゲームエンジン「Pyxel」に対応しました](https://github.com/kitao/pyxel)
+  - ファイルの拡張は.py .pyxapp .editに対応しています 
+  - エディターを起動する場合は 「<任意のファイル名>.edit  (例 hogehoge.edit)」という空っぽのファイルを「/storage/roms/pyxel」フォルダに置いてから実行します
+    - エディターのセーブファイルは「/storage/.config/.pyxel/save」フォルダの配下にあります
+  - 既知の問題 
+    - ESCキー(SELECTボタン)で終了できないゲーム・アプリがあります
+      - リセットボタンを押していただくか、SSH接続して "killall -9 pyxel" を実行してください 
+    - ゲームによってはデフォルトのキーマップでは操作できない場合があります
+      - キーマップの変更方法はこちら
 
 ## 特徴
 ### ●基本情報
@@ -145,8 +137,53 @@ ROM選択画面で「セレクトキー → システム詳細設定 → エミ�
 | SELECT+Vol-       |        画面輝度を下げる |
 | SELECT+十字キーの←       |        EQのON/OFF |
 
+### pyxelのキーマップ設定変更手順
+下記のパスにあるキーマップを定義しているファイルを編集します
+- 「/storage/.config/.pyxel/default.gptk」  
 
+「default.gptk」は下記のような内容になっており、「コントローラー側 = キーボード(マウス)側」という書式になってます。  
 
+例えばコントローラ側のAボタンにキーボードのzを割り当てる場合は「a = z」と定義します。  
+コントローラ側の「back」は「SELECTボタン」、「start」は「STARTボタン」を意味しています。  
+
+キーボード側を「none」にすると、OS側が定義しているコントローラーの信号が出力されます。
+ゲーム側がコントローラ操作を主体としているなら「none」にして、キーボード操作を主体としているならキーボードのキーを設定してあげます。  
+
+デフォルトでは右スティックがマウス操作になってますが、左スティックをマウス操作に書き換えることも可能です。   
+マウスの感度を変える場合は「mouse_delay」の数値を調整してください。   
+```
+back = esc
+start = enter
+a = none
+b = none
+x = none
+y = none
+up = none
+down = none
+left = none
+right = none
+
+left_analog_as_mouse = false
+right_analog_as_mouse = false
+
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right
+
+right_analog_up = mouse_movement_up
+right_analog_down = mouse_movement_down
+right_analog_left = mouse_movement_left
+right_analog_right = mouse_movement_right
+l1 = mouse_right
+r1 = mouse_left
+
+deadzone_y = 2000
+deadzone_x = 2000
+deadzone_triggers = 10
+mouse_scale = 1024
+mouse_delay = 64
+```
 ### ●イコライザーについて
 「SELECT+十字キーの←」でEQのON/OFFができます。  
 イコライザーの音質をチューニングする場合はSDカード内の「.config/pipewire/pipewire.conf.d/sink-eq6.conf」ファイルを編集してOS再起動をしてください。
