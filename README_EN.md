@@ -28,24 +28,16 @@ You can download the .img.gz file from "Releases" in the menu on the right side 
    - Blog URL [https://ameblo.jp/unknown-gra/](https://ameblo.jp/unknown-gra/)
 
 ## update information
-- [NEW] Beta version Ver 0.4 released!
-- [FIX] Removal of citra package
-- [FIX] Removal of yuzu package
-- [NEW] dosbox now supports zip files
-- [NEW] Updated Retroarch version to 1.17
-- [NEW] 64bit gpsp core
-- [FIX] Removed some 32bit cores
-- picoarch updates
-   - [FIX] Fixed key operation issue on menu screen
-   - [FIX] Fixed an issue where some cores had strange screen colors.
-   - [FIX] Fixed aspect ratio
-   - [NEW] Fixed fast forward to 3x speed
-     - Fast forward is not available for some cores
-   - [NEW] Added hotkeys (see list of default hotkeys below)
-   - [NEW] Added high definition (HD) and low definition (LD) (see how to use picoarch HD and LD below)
-     - HD resolution is 640x480
-     - LD resolution is 320x240
-       - CPU load is reduced by about 50% compared to Retroarch, resulting in slower battery consumption
+- [NEW] Beta version Ver 0.5 released!
+- [Compatible with retro game engine "Pyxel"](https://github.com/kitao/pyxel)
+   - File expansion supports .py .pyxapp .edit
+   - To start the editor, place an empty file called "<any file name>.edit (e.g. hogehoge.edit)" in the "/storage/roms/pyxel" folder and then run it.
+     - Editor save files are located under the "/storage/.config/.pyxel/save" folder
+   - Known issues
+     - There are games and applications that cannot be closed using the ESC key (SELECT button).
+       - Please press the reset button or connect via SSH and run "killall -9 pyxel"
+     - Depending on the game, it may not be possible to operate with the default keymap
+       - See "Steps to change pyxel keymap settings"
 
 ## Features
 ### ●Basic information
@@ -59,7 +51,7 @@ You can download the .img.gz file from "Releases" in the menu on the right side 
    - You can update by placing the update file for version 0.3 or later in /storage/.update and restarting the device.
 
 ### ●Automatic creation of roms folder
-When you press the START button from the ES screen to bring up the menu and select "System Settings" → "Create Game Directory", folders such as NES and snes will be created in the ROMS folder.
+If you press the START button from the ES screen to bring up the menu and select "System Settings" → "Create Game Directory", folders such as NES and snes will be created in the roms folder.
 
 ### ●plumOS compatible emulator
 Since plumOS is based on JELOS, you can check information for each emulator (compatible extensions, etc.) from the "System" section on the left menu on the JELOS wiki.
@@ -145,12 +137,59 @@ Select the appropriate ROM file, go to "X button → Advanced settings for this 
 | SELECT+Vol- | Decrease screen brightness |
 | SELECT + cross key ← | EQ ON/OFF |
 
+### Steps to change pyxel keymap settings
+Edit the file that defines the keymap located at the path below
+- "/storage/.config/.pyxel/default.gptk"
+
+The contents of "default.gptk" are as shown below, and the format is "controller side = keyboard (mouse) side".
+
+For example, if you want to assign z on the keyboard to the A button on the controller, define "a = z".
+On the controller side, "back" is the "SELECT button", "start" is the "START button"” means.
+
+If you set the keyboard side to "none", the controller signal defined by the OS will be output.
+If the game is mainly operated by a controller, set it to "none", and if the game is mainly operated by a keyboard, set the keyboard keys.
+
+By default, the right stick is used for mouse operation, but it is also possible to change the left stick to mouse operation.
+If you want to change the sensitivity of the mouse, please adjust the value of "mouse_delay".
+````
+back = esc
+start = enter
+a = none
+b = none
+x = none
+y = none
+up = none
+down = none
+left = none
+right = none
+
+left_analog_as_mouse = false
+right_analog_as_mouse = false
+
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right
+
+right_analog_up = mouse_movement_up
+right_analog_down = mouse_movement_down
+right_analog_left = mouse_movement_left
+right_analog_right = mouse_movement_right
+l1 = mouse_right
+r1 = mouse_left
+
+deadzone_y = 2000
+deadzone_x = 2000
+deadzone_triggers = 10
+mouse_scale = 1024
+mouse_delay = 64
+````
 ### ●About the equalizer
 You can turn EQ ON/OFF with "SELECT + ← on the cross key".
 If you want to tune the sound quality of the equalizer, please edit the ".config/pipewire/pipewire.conf.d/sink-eq6.conf" file in the SD card and restart the OS.
 ````
 ~ Equalizer tuning guide ~
-Basically the part to modify is control = { "Freq" = 100.0 "Q" = 1.0 "Gain" = 0.0}.
+Basically, the places to modify are places like control = { "Freq" = 100.0 "Q" = 1.0 "Gain" = 0.0 }.
 Restart the OS after changing parameters
 
 ● Freq.
@@ -168,8 +207,7 @@ Setting it to a fairly moderate value between 0.6 and 1.0 will give you a good f
 Set the amplification value between -10 and 20.
 ````
 
-If you want to turn the equalizer ON/OFF from the command line, see "[Steps to turn the equalizer on/off in real time]"  
- (https://github.com/game-de-it/plumOS/blob/main/documentation/EQ.md ) Please refer to
+If you want to turn the equalizer ON/OFF from the command line, see "[Steps to turn the equalizer on/off in real time]" (https://github.com/game-de-it/plumOS/blob/main/documentation/EQ.md)" Please refer to
 
 
 ### ●plumOS ultra power saving settings
@@ -191,12 +229,13 @@ From the ES screen, press the START button to bring up the menu, open "System Se
 3. Go to "UI Settings → Theme" on emulationstation and select "es-theme-art-book-next-plumOS"
 
 
-[https://github.com/game-de-it/plumOS/blob/main/packages/themes/es-theme-art-book-next/sources/es-theme-art-book-next-plumOS.zip ](https://github.com/game-de-it/plumOS/blob/main/packages/themes/es-theme-art-book-next/sources/es-theme-art-book-next-plumOS.zip)
+[https://github.com/game-de-it/plumOS/blob/main/packages/themes/es-theme-art-book-next/sources/es-theme-art-book-next-plumOS.zip ]  
+
 
 ### ●How to simply display the default theme
 Go to "UI Settings → Theme Settings" of emulationstation and configure the settings as shown in the image below.
    - With this setting, thumbnail images will not be displayed
-    
+
 <img src="./documentation/plumOS_sc08.jpg" width="400">
 <img src="./documentation/plumOS_sc09.jpg" width="400">
 
