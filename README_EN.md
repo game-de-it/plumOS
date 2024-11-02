@@ -1,4 +1,7 @@
 # plumOS
+
+[The latest version of plumOS is available in the "plumOS-RN" repository here.](https://github.com/game-de-it/plumOS-RN)
+
 [Click here for the English version of the explanation page](./README_EN.md)
 
    <img src="./distributions/plumOS/logos/jelos-logo.png" width="240">
